@@ -39,7 +39,7 @@ public class Home extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
     }
     TextView lblUsername;
-    public void close(View v)
+    public void logout(View v)
     {
         //clear the session user
         sessionUser = null;
@@ -48,6 +48,10 @@ public class Home extends AppCompatActivity {
         finish();
 
 
+    }
+    public void closeApp(View v)
+    {
+        finishAffinity();
     }
     boolean displayed = false;
 

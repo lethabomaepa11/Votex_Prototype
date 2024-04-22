@@ -30,6 +30,12 @@ public class Index extends AppCompatActivity {
 
         });
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
+        if(sessionUser != null)
+        {
+            //if the user did not logout
+            finish();
+            startActivity(new Intent(Index.this, Home.class));
+        }
         VotexDB.VotexDbHelper dbHelper = new VotexDB.VotexDbHelper(this);
         //read to DB must run only once in the lifetime of the app
         //so i will read the users from db, if none exists, then run readToDB

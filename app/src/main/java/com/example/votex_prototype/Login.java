@@ -44,6 +44,7 @@ public class Login extends AppCompatActivity {
         });
         getSupportActionBar().hide();//hide the titlebar
         VotexDB.readFromDB(this,"users");
+
     }
     int count = 0;
    /* public void loadUsers() {

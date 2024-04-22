@@ -35,7 +35,7 @@ public class Main extends AppCompatActivity
     static  int voteCount;
     static ArrayList<Candidate> candidates = new ArrayList<>();
     static  int candidateCount;
-    static  User sessionUser;
+    static  User sessionUser = null;
 
     static public void main(String[] args)
     {
