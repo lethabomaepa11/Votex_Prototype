@@ -60,13 +60,21 @@ public class Register extends AppCompatActivity {
 
                         if(password.equals(confirmPassword))
                         {
-                            //VotexDB.VotexDbHelper dbHelper = new VotexDB.VotexDbHelper(this);
-                            User user = new User(studentNumber,name,email,password,gender);
-                            VotexDB.Insert(this,user,null,null);
-                            //go to another activity
-                            this.finish();
-                            Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Register.this, Login.class));
+                           if(gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female") || gender.equalsIgnoreCase("other"))
+                           {
+                               gender = gender.toLowerCase();
+                               //VotexDB.VotexDbHelper dbHelper = new VotexDB.VotexDbHelper(this);
+                               User user = new User(studentNumber,name,email,password,gender);
+                               VotexDB.Insert(this,user,null,null);
+                               //go to another activity
+                               this.finish();
+                               Toast.makeText(this, "Successfully Created an Account \tUsername: "+studentNumber, Toast.LENGTH_LONG).show();
+                               startActivity(new Intent(Register.this, Login.class));
+                           }
+                           else
+                           {
+                               Snackbar.make(v, "Gender must be Male, Female or Other!!", Snackbar.LENGTH_LONG).show();
+                           }
                         }
                         else
                         {
