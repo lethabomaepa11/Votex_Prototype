@@ -12,10 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -76,7 +79,8 @@ public class Login extends AppCompatActivity {
 
     public void loggedIn(View v)
     {
-        boolean logged_in = false;
+        boolean idExists = false;
+        boolean wrongPassword = true;
         EditText txtUsername = findViewById(R.id.txtloginUsername);
         EditText txtPassword = findViewById(R.id.txtloginPassword);
 
@@ -85,29 +89,56 @@ public class Login extends AppCompatActivity {
 
         //Toast.makeText(this, (id+" p "+password), Toast.LENGTH_SHORT).show();
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).id.equals(id) && !(users.get(i).id.equals("ad1010"))) {
+            if ((users.get(i).id.equals(id) && !(users.get(i).id.equals("ad1010"))) || users.get(i).email.equals(id)) {
+                idExists = true;
                 if (users.get(i).password.equals(password)) { // Use equals() for string comparison
                     sessionUser = users.get(i);
                     Toast.makeText(this, "Logged In Successfully as "+users.get(i).name, Toast.LENGTH_SHORT).show();
                     finishActivity(0);
                     this.finish();
                     startActivity(new Intent(Login.this, Home.class));
-                    logged_in = true;
+                    wrongPassword = false;
                     break;
                 }
+                break;
             } else if (users.get(i).id.equals("ad1010") && users.get(i).password.equals(password)) {
                 //startActivity(new Intent(Login.this, AdminDashboard.class));
-                logged_in = true; // Set logged_in to true for admin login
+                Toast.makeText(this, "Admin login Successful as "+users.get(i).name, Toast.LENGTH_SHORT).show();
+                finishActivity(0);
+                this.finish();
+                startActivity(new Intent(Login.this, AdminDashboard.class));
+                idExists = true;
                 break; // Exit loop once admin is identified
             }
+
+        }
+        if(!idExists)
+        {
+            wrongPassword = false;//account does not exist
         }
 
-        if (!logged_in) {
-
-
-
-            Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+        if(wrongPassword)
+        {
+            new AlertDialog.Builder(this)
+                    .setTitle("Wrong Password")
+                    .setMessage("Wrong Password for \""+id+"\"")
+                    .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
         }
+        else if (!idExists) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Account does not exist for \""+id+"\"")
+                    .setMessage("Create a new account?")
+                    .setNegativeButton(android.R.string.no, (dialog, which) -> dialog.dismiss())
+                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                        dialog.dismiss();
+                        startActivity(new Intent(Login.this, Register.class));
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+
 
     }
 

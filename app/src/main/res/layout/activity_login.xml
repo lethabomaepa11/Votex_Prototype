@@ -41,33 +41,34 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:paddingVertical="10dp"
         android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
         android:text="Login"
         android:textColor="@color/white"
         android:textFontWeight="600"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <EditText
         android:id="@+id/txtloginUsername"
         android:layout_width="0dp"
         android:minHeight="60dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:backgroundTint="@color/white"
-        android:hint="Enter student number"
-        android:inputType="text"
         android:textColorHint="#aaa"
         android:textColor="#000"
+        android:padding="10px"
+        android:backgroundTint="@color/white"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter student number or email"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.0"
@@ -75,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.163"
         android:background="@drawable/rounded_corners_ui"
-        android:padding="10px"/>
+        />
 
     <EditText
         android:id="@+id/txtloginPassword"

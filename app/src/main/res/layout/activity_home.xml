@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home"
-    android:background="@color/primary">
+    android:background="@drawable/logo">
 
     <Button
         android:id="@+id/btnHelp"
@@ -14,6 +14,7 @@
         android:layout_height="60dp"
         android:backgroundTint="@color/teal_700"
         android:text="Help"
+        android:onClick="help"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -21,6 +22,21 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.484" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="View my Details"
+        android:textColor="#fff"
+        android:onClick="showDetails"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
 
     <Button
         android:id="@+id/btnStart"
@@ -42,16 +58,16 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:backgroundTint="#ff0000"
-        app:cornerRadius="8dp"
         android:onClick="close"
         android:text="Logout"
         android:textColor="@color/white"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.697" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -85,28 +101,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:padding="15dp"
+        android:paddingVertical="10dp"
         android:text="Username"
+        android:onClick="showDetails"
         android:textColor="@color/white"
         android:textSize="20dp"
+        android:textFontWeight="800"
+        android:background="@drawable/rounded_corners_ui"
+        android:backgroundTint="@color/purple_500"
+        android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="145dp"
-        android:background="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/btnStart"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnStart"
-        app:layout_constraintTop_toBottomOf="@+id/lblUsername"
-        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
