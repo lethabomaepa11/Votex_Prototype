@@ -1,6 +1,6 @@
 1122#Lethabo Bonga#lethabo11@gmail.com#12345#male
 ad1010#admin#admin@nwu.ac.za#admin#admin
-1133#Prudence Mabena#prudy@gmail.com#12331#Female
+1133#Prudence Mabena#prudy@gmail.com#12345#Female
 12345#Kabelo Skhosana#kb@mynwu.ac.za#1111#Male
 765#Itumeleng Themu#itu@mynwu.ac.za#23565#Female
 65789#Itumeleng Mamba#itu@mynwu.ac.za#756646#male

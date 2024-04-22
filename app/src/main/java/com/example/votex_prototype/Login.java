@@ -42,12 +42,13 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().hide();//hide the titlebar
 
     }
-    public void loadUsers() {
+    int count = 0;
+   /* public void loadUsers() {
         try {
             InputStream inputStream = getAssets().open("users.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
-            count = 0;
+
             while ((line = reader.readLine()) != null) {
                 String[] details = line.split("#");
                 if (details.length == 5) {
@@ -61,7 +62,7 @@ public class Login extends AppCompatActivity {
         } catch (IOException e) {
             //Toast.makeText(this, "Failed to load user data\n"+e.toString(), Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
     public void writeToFileInInternalStorage(String data, Context context) {
         try {
             // Open a private file associated with this Context's application package for writing.
@@ -75,8 +76,6 @@ public class Login extends AppCompatActivity {
 
     public void loggedIn(View v)
     {
-
-        loadUsers();
         boolean logged_in = false;
         EditText txtUsername = findViewById(R.id.txtloginUsername);
         EditText txtPassword = findViewById(R.id.txtloginPassword);
@@ -85,18 +84,18 @@ public class Login extends AppCompatActivity {
         String password = txtPassword.getText().toString();
 
         //Toast.makeText(this, (id+" p "+password), Toast.LENGTH_SHORT).show();
-        for (int i = 0; i < count; i++) {
-            if (users[i].id.equals(id) && !(users[i].id.equals("ad1010"))) {
-                if (users[i].password.equals(password)) { // Use equals() for string comparison
-                    sessionUser = users[i];
-                    Toast.makeText(this, "Logged In Successfully as "+users[i].name, Toast.LENGTH_SHORT).show();
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).id.equals(id) && !(users.get(i).id.equals("ad1010"))) {
+                if (users.get(i).password.equals(password)) { // Use equals() for string comparison
+                    sessionUser = users.get(i);
+                    Toast.makeText(this, "Logged In Successfully as "+users.get(i).name, Toast.LENGTH_SHORT).show();
                     finishActivity(0);
                     this.finish();
                     startActivity(new Intent(Login.this, Home.class));
                     logged_in = true;
                     break;
                 }
-            } else if (users[i].id.equals("ad1010") && users[i].password.equals(password)) {
+            } else if (users.get(i).id.equals("ad1010") && users.get(i).password.equals(password)) {
                 //startActivity(new Intent(Login.this, AdminDashboard.class));
                 logged_in = true; // Set logged_in to true for admin login
                 break; // Exit loop once admin is identified

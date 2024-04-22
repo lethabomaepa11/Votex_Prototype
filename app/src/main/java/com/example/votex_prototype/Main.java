@@ -21,52 +21,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
+import android.database.sqlite.*;
 
+
+//we use this class as the main, it contains all the methods needed
 public class Main extends AppCompatActivity
 {
-    static User users[] = new User[100];
+    static ArrayList<User> users = new ArrayList<>();
+    static  int userCount;
+    static ArrayList<Vote> votes = new ArrayList<>();
+    static  int voteCount;
+    static ArrayList<Candidate> candidates = new ArrayList<>();
+    static  int candidateCount;
     static  User sessionUser;
-    static int count = 0;
-    char delimiter = '#';
-
-
-
-
-
-
-    public void writeToFileInInternalStorage(String filename, String data, Context context) {
-        try {
-            // Open a private file associated with this Context's application package for writing.
-            FileWriter writer = new FileWriter(new File(context.getFilesDir(), filename));
-            writer.write(data);
-            writer.close(); // Always close the writer to avoid memory leaks.
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void loadInitialUsers() {
-        try {
-            InputStream inputStream = getAssets().open("users.txt");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String line;
-            count = 0;
-            while ((line = reader.readLine()) != null) {
-                String[] details = line.split("#");
-                if (details.length == 5) {
-                    users[count] = new User(details[0],details[1],details[2],details[3],details[4]);
-                    String data = details[0]+"#"+details[1]+"#"+details[2]+"#"+details[3]+"#"+details[4]+"\n";
-                    writeToFileInInternalStorage("users.txt",data,this);
-                    count++;
-                }
-            }
-            reader.close();
-        } catch (IOException e) {
-            //Toast.makeText(this, "Failed to load user data\n"+e.toString(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
     static public void main(String[] args)
     {
