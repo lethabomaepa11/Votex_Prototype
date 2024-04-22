@@ -32,14 +32,14 @@ public class Index extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
         if(sessionUser != null)
         {
-            //if the user did not logout
+            //if the user did not logout before closing the app, take them to the home screen.
             finish();
             startActivity(new Intent(Index.this, Home.class));
         }
         VotexDB.VotexDbHelper dbHelper = new VotexDB.VotexDbHelper(this);
         //read to DB must run only once in the lifetime of the app
         //so i will read the users from db, if none exists, then run readToDB
-        VotexDB.readFromDB(this,"users.txt");
+        VotexDB.readFromDB(this,"users");
         if(users.isEmpty())
         {
             VotexDB.ReadToDB(this,"users.txt");
@@ -50,7 +50,7 @@ public class Index extends AppCompatActivity {
         VotexDB.readFromDB(this,"votes");
         VotexDB.readFromDB(this,"candidates");
         
-        while(users.size() == 0)
+        while(users.isEmpty())
         {
             Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show();
         }

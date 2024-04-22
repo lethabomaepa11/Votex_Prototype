@@ -135,6 +135,7 @@ public class Login extends AppCompatActivity {
                     .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                         dialog.dismiss();
                         startActivity(new Intent(Login.this, Register.class));
+
                     })
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
