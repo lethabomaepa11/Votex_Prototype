@@ -45,38 +45,8 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().hide();//hide the titlebar
         VotexDB.readFromDB(this,"users");
 
-    }
-    int count = 0;
-   /* public void loadUsers() {
-        try {
-            InputStream inputStream = getAssets().open("users.txt");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String line;
 
-            while ((line = reader.readLine()) != null) {
-                String[] details = line.split("#");
-                if (details.length == 5) {
-                   users[count] = new User(details[0],details[1],details[2],details[3],details[4]);
-                   String data = details[0]+"#"+details[1]+"#"+details[2]+"#"+details[3]+"#"+details[4]+"\n";
-                   writeToFileInInternalStorage(data,this);
-                   count++;
-                }
-            }
-            reader.close();
-        } catch (IOException e) {
-            //Toast.makeText(this, "Failed to load user data\n"+e.toString(), Toast.LENGTH_SHORT).show();
-        }
-    }*/
-   public void writeToFileInInternalStorage(String data, Context context) {
-       try {
-           // Open a private file associated with this Context's application package for writing.
-           FileWriter writer = new FileWriter(new File(context.getFilesDir(), "users.txt"),true);
-           writer.write(data);
-           writer.close(); // Always close the writer to avoid memory leaks.
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
-   }
+    }
 
     public void loggedIn(View v)
     {

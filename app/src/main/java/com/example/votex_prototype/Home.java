@@ -3,6 +3,7 @@ package com.example.votex_prototype;
 import static com.example.votex_prototype.Main.*;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -46,7 +47,7 @@ public class Home extends AppCompatActivity {
         finishActivity(0);
         Toast.makeText(this, "Logging Out...", Toast.LENGTH_SHORT).show();
         finish();
-
+        startActivity(new Intent(Home.this, Index.class));
 
     }
     public void closeApp(View v)
@@ -56,6 +57,7 @@ public class Home extends AppCompatActivity {
     boolean displayed = false;
 
 
+    @SuppressLint("SetTextI18n")
     public void showDetails(View v)
     {
         if(!displayed)

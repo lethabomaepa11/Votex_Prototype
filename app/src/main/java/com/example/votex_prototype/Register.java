@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -47,14 +48,17 @@ public class Register extends AppCompatActivity {
             String studentNumber = txtStudentNumber.getText().toString();
             String password = txtNPassword.getText().toString();
             String confirmPassword = txtCPassword.getText().toString();
+            boolean error = true;
+            String title = null,message = null;
 
 
             if(!name.isEmpty() && !email.isEmpty() && !gender.isEmpty() && !studentNumber.isEmpty() && !password.isEmpty() && !confirmPassword.isEmpty()) {
-                if (email.contains("@mynwu.ac.za"))
+                if (email.endsWith("@mynwu.ac.za"))
                 {
-                    if (studentNumber.length() < 8)
+                    if (studentNumber.length() != 8)
                     {
-                        Snackbar.make(v, "Enter your student number: Has 8 digits", Snackbar.LENGTH_LONG).show();
+                        title = "Username!!";
+                        message = "Enter your student number as your username:\nMust have 8 digits";
                     }
                     else {
 
@@ -68,32 +72,44 @@ public class Register extends AppCompatActivity {
                                VotexDB.Insert(this,user,null,null);
                                //go to another activity
                                this.finish();
+                               error = false;
                                Toast.makeText(this, "Successfully Created an Account \tUsername: "+studentNumber, Toast.LENGTH_LONG).show();
                                startActivity(new Intent(Register.this, Login.class));
                            }
                            else
                            {
-                               Snackbar.make(v, "Gender must be Male, Female or Other!!", Snackbar.LENGTH_LONG).show();
+                               title = "Gender!!!";
+                               message = "Gender must be Male, Female or Other!!";
                            }
                         }
                         else
                         {
-                            Snackbar.make(v, "Passwords do not match!!", Snackbar.LENGTH_LONG).show();
+                            title = "Password do not match!!";
+                            message = "Passwords entered do not match, try again!";
                         }
 
                     }
 
                 }
                 else {
-
-                    Snackbar.make(v, "Enter your student email: includes \"@mynwu.ac.za\"", Snackbar.LENGTH_LONG).show();
+                    title = "Email";
+                    message = "Enter your student email: must end with \"@mynwu.ac.za\"";
                 }
             }
             else
             {
+                message = "Make sure all textboxes are not empty";
                 Snackbar.make(v, "Error!\nMake sure all textboxes are not empty!!!", Snackbar.LENGTH_LONG).show();
             }
-
+            if(error)
+            {
+                new AlertDialog.Builder(this)
+                        .setTitle(title)
+                        .setMessage(message)
+                        .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
 
 
         }catch (Exception e)
