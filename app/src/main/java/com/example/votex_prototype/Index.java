@@ -13,6 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.example.votex_prototype.VotexDB;
 
+import java.util.Objects;
+
 public class Index extends AppCompatActivity {
 
     @Override
@@ -27,11 +29,17 @@ public class Index extends AppCompatActivity {
             return insets;
 
         });
-        getSupportActionBar().hide();//hide the titlebar
+        Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
         VotexDB.VotexDbHelper dbHelper = new VotexDB.VotexDbHelper(this);
-        VotexDB.ReadToDB(this,"users.txt");
-        VotexDB.ReadToDB(this,"votes.txt");
-        VotexDB.ReadToDB(this,"candidates.txt");
+        //read to DB must run only once in the lifetime of the app
+        //so i will read the users from db, if none exists, then run readToDB
+        VotexDB.readFromDB(this,"users.txt");
+        if(users.isEmpty())
+        {
+            VotexDB.ReadToDB(this,"users.txt");
+            VotexDB.ReadToDB(this,"votes.txt");
+            VotexDB.ReadToDB(this,"candidates.txt");
+        }
         VotexDB.readFromDB(this,"users");
         VotexDB.readFromDB(this,"votes");
         VotexDB.readFromDB(this,"candidates");
@@ -42,6 +50,7 @@ public class Index extends AppCompatActivity {
         }
 
     }
+
     public void btnClick(View v)
     {
         //go to another activity

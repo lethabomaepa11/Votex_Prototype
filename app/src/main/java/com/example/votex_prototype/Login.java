@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
             return insets;
         });
         getSupportActionBar().hide();//hide the titlebar
-
+        VotexDB.readFromDB(this,"users");
     }
     int count = 0;
    /* public void loadUsers() {
@@ -63,16 +63,16 @@ public class Login extends AppCompatActivity {
             //Toast.makeText(this, "Failed to load user data\n"+e.toString(), Toast.LENGTH_SHORT).show();
         }
     }*/
-    public void writeToFileInInternalStorage(String data, Context context) {
-        try {
-            // Open a private file associated with this Context's application package for writing.
-            FileWriter writer = new FileWriter(new File(context.getFilesDir(), "users.txt"),true);
-            writer.write(data);
-            writer.close(); // Always close the writer to avoid memory leaks.
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+   public void writeToFileInInternalStorage(String data, Context context) {
+       try {
+           // Open a private file associated with this Context's application package for writing.
+           FileWriter writer = new FileWriter(new File(context.getFilesDir(), "users.txt"),true);
+           writer.write(data);
+           writer.close(); // Always close the writer to avoid memory leaks.
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
 
     public void loggedIn(View v)
     {
