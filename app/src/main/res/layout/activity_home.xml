@@ -5,17 +5,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home"
-    android:background="@drawable/logo">
+    android:background="@drawable/logo"
+    tools:context=".Home">
+
 
     <Button
         android:id="@+id/btnHelp"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:drawableLeft="@drawable/info"
         android:backgroundTint="@color/teal_700"
-        android:text="Help"
+        android:drawableLeft="@drawable/info"
         android:onClick="help"
+        android:text="Help"
+        app:cornerRadius="25dp"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -26,14 +28,15 @@
 
     <Button
 
-        android:drawableLeft="@drawable/account_circle"
         android:id="@+id/btnInfo"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        app:cornerRadius="25dp"
         android:backgroundTint="@color/teal_700"
+        android:drawableLeft="@drawable/account_circle"
+        android:onClick="showDetails"
         android:text="View my Details"
         android:textColor="#fff"
-        android:onClick="showDetails"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,53 +45,54 @@
         app:layout_constraintVertical_bias="0.59" />
 
     <Button
-        android:drawableLeft="@drawable/add"
         android:id="@+id/btnVote"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="10dp"
         android:backgroundTint="@color/teal_700"
+        android:drawableLeft="@drawable/add"
         android:text="Cast your Vote"
         android:textColor="#fff"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:drawableLeft="@drawable/logout"
         android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:backgroundTint="#ff0000"
+        android:drawableLeft="@drawable/logout"
         android:onClick="logout"
         android:text="Logout"
         android:textColor="@color/white"
-        app:cornerRadius="8dp"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintVertical_bias="0.728" />
 
     <Button
-        android:drawableLeft="@drawable/close"
         android:id="@+id/btnClose"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="#ff0000"
+        android:drawableLeft="@drawable/close"
         android:onClick="closeApp"
         android:text="Close App"
         android:textColor="@color/white"
-        app:cornerRadius="8dp"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786" />
+        app:layout_constraintVertical_bias="0.728" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -108,25 +112,27 @@
         android:id="@+id/btnResults"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/teal_700"
-        android:text="View results"
         android:drawableLeft="@drawable/analytics"
+        android:text="View Results"
         android:textColor="#fff"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/btnVote"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:drawableLeft="@drawable/account_circle"
         android:id="@+id/lblUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corners_ui"
         android:backgroundTint="@color/purple_500"
+        android:drawableLeft="@drawable/account_circle"
         android:fontFamily="sans-serif-black"
         android:onClick="showDetails"
         android:paddingHorizontal="10dp"
@@ -141,5 +147,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/teal_700"
+        android:drawableLeft="@drawable/menu"
+        android:text="Menu"
+        android:textColor="#fff"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
