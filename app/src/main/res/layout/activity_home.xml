@@ -12,6 +12,7 @@
         android:id="@+id/btnHelp"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:drawableLeft="@drawable/info"
         android:backgroundTint="@color/teal_700"
         android:text="Help"
         android:onClick="help"
@@ -24,6 +25,8 @@
         app:layout_constraintVertical_bias="0.484" />
 
     <Button
+
+        android:drawableLeft="@drawable/account_circle"
         android:id="@+id/btnInfo"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -39,6 +42,7 @@
         app:layout_constraintVertical_bias="0.59" />
 
     <Button
+        android:drawableLeft="@drawable/add"
         android:id="@+id/btnVote"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -53,6 +57,7 @@
         app:layout_constraintVertical_bias="0.375" />
 
     <Button
+        android:drawableLeft="@drawable/logout"
         android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -69,6 +74,7 @@
         app:layout_constraintVertical_bias="0.697" />
 
     <Button
+        android:drawableLeft="@drawable/close"
         android:id="@+id/btnClose"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -105,6 +111,7 @@
         android:layout_marginEnd="4dp"
         android:backgroundTint="@color/teal_700"
         android:text="View results"
+        android:drawableLeft="@drawable/analytics"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -114,6 +121,7 @@
         app:layout_constraintVertical_bias="0.375" />
 
     <TextView
+        android:drawableLeft="@drawable/account_circle"
         android:id="@+id/lblUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

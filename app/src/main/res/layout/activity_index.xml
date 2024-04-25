@@ -53,6 +53,7 @@
         app:layout_constraintGuide_percent="0.95" />
 
     <Button
+        android:drawableLeft="@drawable/login"
         android:id="@+id/Login"
         android:layout_width="0dp"
         android:layout_height="61dp"
@@ -71,6 +72,7 @@
         android:id="@+id/Create"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:drawableLeft="@drawable/person_add"
         android:backgroundTint="@color/teal_700"
         android:onClick="register"
         android:text="Create Account"
@@ -81,5 +83,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
