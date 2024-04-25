@@ -26,7 +26,7 @@
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:backgroundTint="@color/purple_700"
+        android:backgroundTint="@color/teal_700"
         android:onClick="loggedIn"
         android:text="Login"
         android:textColor="#fff"
@@ -41,10 +41,14 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_ui"
+        android:backgroundTint="@color/purple_500"
+        android:drawableLeft="@drawable/logosmall"
+        android:drawableTint="@color/white"
         android:fontFamily="sans-serif-black"
-        android:paddingHorizontal="5dp"
+        android:paddingHorizontal="10dp"
         android:paddingVertical="10dp"
         android:text="Login"
         android:textColor="@color/white"
@@ -52,10 +56,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtloginUsername"

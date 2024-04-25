@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -36,6 +38,10 @@ public class Home extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        layout = findViewById(R.id.appearLayout);
+        btnResults = findViewById(R.id.btnResults);
+        btnVote = findViewById(R.id.btnVote);
+        btnMenu = findViewById(R.id.btnMenu);
         lblUsername = findViewById(R.id.lblUsername);
         lblUsername.setText(sessionUser.name);
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
@@ -48,17 +54,17 @@ public class Home extends AppCompatActivity {
         }
         if(sessionUser.getHasVoted())
         {
-            Button btnVote = findViewById(R.id.btnVote);
             btnVote.setVisibility(View.GONE);
         }
         else
         {
-            Button btnVote = findViewById(R.id.btnResults);
-            btnVote.setVisibility(View.GONE);
+            btnResults.setVisibility(View.GONE);
         }
 
     }
     TextView lblUsername;
+    Button btnVote,btnResults,btnMenu;
+    LinearLayout layout;
     public void logout(View v)
     {
         //clear the session user
@@ -92,8 +98,40 @@ public class Home extends AppCompatActivity {
         else
         {
             lblUsername.setTextSize(25);
-            lblUsername.setText(sessionUser.name);
+            if (layout.getVisibility() == View.VISIBLE) {
+                lblUsername.setText("Menu");
+            } else {
+                lblUsername.setText(sessionUser.name);
+            }
             displayed = false;
+        }
+    }
+    @SuppressLint("UseCompatLoadingForDrawables")
+    public void menuAppear(View v)
+    {
+
+        if(layout.getVisibility() == View.VISIBLE)
+        {
+            layout.setVisibility(View.INVISIBLE);
+            lblUsername.setText(sessionUser.name);
+            btnMenu.setVisibility(View.VISIBLE);
+            if (sessionUser.getHasVoted()) {
+                btnResults.setVisibility(View.VISIBLE);
+            } else {
+                btnVote.setVisibility(View.VISIBLE);
+            }
+        }
+        else
+        {
+            layout.setVisibility(View.VISIBLE);
+            lblUsername.setText("Menu");
+            btnMenu.setVisibility(View.INVISIBLE);
+
+            if (sessionUser.getHasVoted()) {
+                btnResults.setVisibility(View.INVISIBLE);
+            } else {
+                btnVote.setVisibility(View.INVISIBLE);
+            }
         }
     }
     public void help(View v) {

@@ -1,9 +1,8 @@
 package com.example.votex_prototype;
 
-import static com.example.votex_prototype.Main.candidateCount;
+
 import static com.example.votex_prototype.Main.candidates;
 import static com.example.votex_prototype.Main.users;
-import static com.example.votex_prototype.Main.voteCount;
 import static com.example.votex_prototype.Main.votes;
 
 
@@ -222,7 +221,7 @@ public final class VotexDB {
                     String name = cursor.getString(cursor.getColumnIndexOrThrow(Candidates.COLUMN_NAME_NAME));
                     String portfolio = cursor.getString(cursor.getColumnIndexOrThrow(Candidates.COLUMN_NAME_PORTFOLIO));
                     candidates.add(new Candidate(name,portfolio,id));
-                    candidateCount++;
+
                 }
                 cursor.close();
                 break;
@@ -240,7 +239,6 @@ public final class VotexDB {
                     String voterID = cursor.getString(cursor.getColumnIndexOrThrow(Votes.COLUMN_NAME_VOTER_ID));
                     String  candidateID= cursor.getString(cursor.getColumnIndexOrThrow(Votes.COLUMN_NAME_CANDIDATE_ID));
                     votes.add(new Vote(voterID,candidateID));
-                    voteCount++;
                 }
                 cursor.close();
                 break;

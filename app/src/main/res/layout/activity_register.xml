@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginBottom="48dp"
-        android:backgroundTint="@color/purple_700"
+        android:backgroundTint="@color/teal_700"
         android:text="Register account"
         android:textColor="#fff"
         android:textFontWeight="400"
@@ -233,16 +233,21 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:textColor="@color/white"
+        android:background="@drawable/rounded_corners_ui"
+        android:backgroundTint="@color/purple_500"
+        android:drawableLeft="@drawable/logosmall"
+        android:drawableTint="@color/white"
         android:text="Create an Account"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:paddingVertical="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.005" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
