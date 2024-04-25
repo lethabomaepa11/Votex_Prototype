@@ -163,7 +163,7 @@
         android:fontFamily="sans-serif-black"
         android:textFontWeight="800"
         android:paddingHorizontal="10dp"
-        android:paddingVertical="5dp"
+        android:paddingVertical="10dp"
         android:text="Username"
         android:textColor="@color/white"
         android:textSize="20dp"
