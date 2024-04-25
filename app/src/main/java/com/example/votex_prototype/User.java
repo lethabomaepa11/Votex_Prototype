@@ -6,6 +6,7 @@ public class User
      public String id;
      public String gender;
      public String password;
+     private boolean hasVoted;
      
      
      public User(){};
@@ -17,6 +18,14 @@ public class User
          this.id = id;
          this.gender = gender;
          this.password = password;
+     }
+     public void setHasVoted()
+     {
+         this.hasVoted = true;
+     }
+     public boolean getHasVoted()
+     {
+         return this.hasVoted;
      }
      
     

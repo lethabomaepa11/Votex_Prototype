@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +39,24 @@ public class Home extends AppCompatActivity {
         lblUsername = findViewById(R.id.lblUsername);
         lblUsername.setText(sessionUser.name);
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
+        for(int i = 0; i < votes.size(); i++)
+        {
+            if(Objects.equals(sessionUser.id, votes.get(i).getVoterId()))
+            {
+                sessionUser.setHasVoted();
+            }
+        }
+        if(sessionUser.getHasVoted())
+        {
+            Button btnVote = findViewById(R.id.btnVote);
+            btnVote.setVisibility(View.GONE);
+        }
+        else
+        {
+            Button btnVote = findViewById(R.id.btnResults);
+            btnVote.setVisibility(View.GONE);
+        }
+
     }
     TextView lblUsername;
     public void logout(View v)
@@ -65,7 +84,8 @@ public class Home extends AppCompatActivity {
             lblUsername.setText("DETAILS\n\nName: "+sessionUser.name+
                     "\nUsername: "+sessionUser.id+
                     "\nEmail: "+sessionUser.email+
-                    "\nGender: "+sessionUser.gender);
+                    "\nGender: "+sessionUser.gender.toUpperCase()+
+                    "\nHas voted: "+ sessionUser.getHasVoted());
             displayed = true;
             lblUsername.setTextSize(18);
         }
@@ -80,7 +100,7 @@ public class Home extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setTitle("Help Information")
-                .setMessage("Click on \"Cast your Vote\" to proceed to voting screen" +
+                .setMessage(!(sessionUser.getHasVoted())?"Click on \"Cast your Vote\" to proceed to voting screen" +
                         "\n\nYou will be able to choose only one candidate per Portfolio" +
                         "\n\nAvailable portfolios are: " +
                         "\n\t*Chaiperson" +
@@ -89,7 +109,8 @@ public class Home extends AppCompatActivity {
                         "\n\t*Treasurer" +
                         "\n\t*Legal Officer" +
                         "\n\t*Academic Officer" +
-                        "\n\nEach portfolio will have 3 candidates, each candidate representing SASCO, EFFSC or REVOLUTION")
+                        "\n\nEach portfolio will have 3 candidates, each candidate representing SASCO, EFFSC or REVOLUTION":
+                        "Click View Results")
                 .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
                 .setIcon(android.R.drawable.ic_dialog_info)
                 .show();

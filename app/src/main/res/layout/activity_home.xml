@@ -39,15 +39,14 @@
         app:layout_constraintVertical_bias="0.59" />
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/btnVote"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginRight="40px"
         android:backgroundTint="@color/teal_700"
         android:text="Cast your Vote"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnViewR"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
@@ -100,7 +99,7 @@
         app:layout_constraintGuide_percent="0.95" />
 
     <Button
-        android:id="@+id/btnViewR"
+        android:id="@+id/btnResults"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginEnd="4dp"
@@ -109,6 +108,8 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnVote"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.375" />
 
@@ -116,20 +117,20 @@
         android:id="@+id/lblUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:paddingVertical="10dp"
-        android:text="Username"
-        android:onClick="showDetails"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textFontWeight="800"
         android:background="@drawable/rounded_corners_ui"
         android:backgroundTint="@color/purple_500"
+        android:fontFamily="sans-serif-black"
+        android:onClick="showDetails"
         android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:text="Username"
+        android:textColor="@color/white"
+        android:textFontWeight="800"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 

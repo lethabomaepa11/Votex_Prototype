@@ -79,6 +79,7 @@ public class Login extends AppCompatActivity {
                 this.finish();
                 startActivity(new Intent(Login.this, AdminDashboard.class));
                 idExists = true;
+                wrongPassword = false;
                 break; // Exit loop once admin is identified
             }
 
