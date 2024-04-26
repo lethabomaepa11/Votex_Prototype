@@ -154,4 +154,24 @@ public class Home extends AppCompatActivity {
                 .show();
 
     }
+
+    public void startVote(View v)
+    {
+        //go to another activity
+        //Toast.makeText(this, users.size(), Toast.LENGTH_SHORT).show();
+        new AlertDialog.Builder(this)
+                .setTitle("Help Information")
+                .setMessage("You are About to start your voting process...//other info")
+                .setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.dismiss())
+                .setPositiveButton(android.R.string.ok, (dialog, which) ->
+                {
+                    startActivity(new Intent(Home.this, VotingActivity.class));
+                    dialog.dismiss();
+                })
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .show();
+
+
+
+    }
 }
