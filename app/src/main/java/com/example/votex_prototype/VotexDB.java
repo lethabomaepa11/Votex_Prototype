@@ -37,6 +37,7 @@ public final class VotexDB {
         public static final String COLUMN_NAME_NAME = "Name";
         public static final String COLUMN_NAME_PORTFOLIO = "Portfolio";
         public static final String COLUMN_NAME_ID = "ID";
+        public static final String COLUMN_NAME_PARTY = "Party";
     }
     //Votes table
     public static class Votes implements BaseColumns {
@@ -74,7 +75,7 @@ public final class VotexDB {
     static public class VotexDbHelper extends SQLiteOpenHelper {
         // If you change the database schema, you must increment the database version.
         public static final int DATABASE_VERSION = 1;
-        public static final String DATABASE_NAME = "VotexDatabase.db";
+        public static final String DATABASE_NAME = "VotersDatabase.db";
 
         public VotexDbHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -124,6 +125,7 @@ public final class VotexDB {
             values.put(Candidates.COLUMN_NAME_ID, candidate.getId());
             values.put(Candidates.COLUMN_NAME_NAME, candidate.getName());
             values.put(Candidates.COLUMN_NAME_PORTFOLIO, candidate.getPortfolio());
+            values.put(Candidates.COLUMN_NAME_PARTY, candidate.getParty());
             db.insert(Candidates.TABLE_NAME, null, values);
         }
         else if(vote != null)
@@ -159,7 +161,7 @@ public final class VotexDB {
                             Insert(context,user,null,null);
                             break;
                         case "candidates.txt":
-                            Candidate candidate = new Candidate(details[0],details[1],details[2]);
+                            Candidate candidate = new Candidate(details[0],details[1],details[2],details[3]);
                             Insert(context,null,candidate,null);
                             break;
                         case "votes.txt":
@@ -220,7 +222,8 @@ public final class VotexDB {
                     String id = cursor.getString(cursor.getColumnIndexOrThrow(Candidates.COLUMN_NAME_ID));
                     String name = cursor.getString(cursor.getColumnIndexOrThrow(Candidates.COLUMN_NAME_NAME));
                     String portfolio = cursor.getString(cursor.getColumnIndexOrThrow(Candidates.COLUMN_NAME_PORTFOLIO));
-                    candidates.add(new Candidate(name,portfolio,id));
+                    String party = cursor.getString(cursor.getColumnIndexOrThrow(Candidates.COLUMN_NAME_PARTY));
+                    candidates.add(new Candidate(name,portfolio,id,party));
 
                 }
                 cursor.close();

@@ -68,7 +68,6 @@
                 android:id="@+id/lblTotalUsers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="30"
                 android:textSize="30dp"
                 android:textColor="@color/black"
                 android:textFontWeight="800"/>
@@ -101,7 +100,6 @@
                     android:id="@+id/lblVoted"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="21"
                     android:textSize="30dp"
                     android:textColor="@color/black"
                     android:textFontWeight="800"/>
@@ -110,13 +108,12 @@
                     android:layout_marginLeft="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9"
                     android:textSize="30dp"
                     android:textColor="@color/black"
                     android:textFontWeight="800"/>
 
             </LinearLayout>
-
+            
         </LinearLayout>
     </LinearLayout>
 
