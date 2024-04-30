@@ -30,26 +30,30 @@ public class AdminDashboard extends AppCompatActivity {
             return insets;
         });
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
-        VotexDB.VotexDbHelper dbHelper = new VotexDB.VotexDbHelper(this);
+
         if(users.isEmpty())
         {
-            Toast.makeText(this, "Cannot open", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cannot open...", Toast.LENGTH_SHORT).show();
         }
         else {
-            users.clear();
-            votes.clear();
-            candidates.clear();
             lblTotalUsers = findViewById(R.id.lblTotalUsers);
             lblVoted = findViewById(R.id.lblVoted);
             lblDidNotVote = findViewById(R.id.lblDidNotVote);
+            users.clear();
+            votes.clear();
+            candidates.clear();
             VotexDB.readFromDB(this, "users");
             VotexDB.readFromDB(this, "votes");
             VotexDB.readFromDB(this, "candidates");
+
             for(int i = 0; i < votes.size(); i++)
             {
-                if(Objects.equals(users.get(i).id, votes.get(i).getVoterId()))
+                for(int k = 0; k < users.size(); k++)
                 {
-                    users.get(i).setHasVoted();
+                    if(Objects.equals(users.get(k).id, votes.get(i).getVoterId()))
+                    {
+                        users.get(k).setHasVoted();
+                    }
                 }
             }
             //load the stats
