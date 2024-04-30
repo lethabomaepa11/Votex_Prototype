@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateCandidates"
+    android:background="@drawable/logo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Candidates"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                />
+                <TextView
+                    android:id="@+id/txtPortfolio"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:text="Chairperson"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="22dp"
+                    android:textAlignment="center"
+                    android:background="@color/purple_700"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sasco Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txtSascoChairperson"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EffSC Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtEffChairperson"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVOLUTION Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtRevoChairperson"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <!--- Deputy Chair -->
+            <TextView
+                android:id="@+id/txtPortfolio"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Deputy Chairperson"
+                android:textColor="@color/white"
+                android:layout_marginTop="22dp"
+                android:textAlignment="center"
+                android:background="@color/purple_700"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sasco Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txtSascoDeputyChair"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EffSC Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtEffDeputyChair"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVOLUTION Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/txtRevoDeputyChair"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:textColor="@color/black" />
+
+            <!--- Secretary -->
+            <TextView
+                android:id="@+id/txtPortfolio"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Secretary"
+                android:textColor="@color/white"
+                android:layout_marginTop="22dp"
+                android:textAlignment="center"
+                android:background="@color/purple_700"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sasco Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txtSascoSecretary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EffSC Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtEffSecretary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVOLUTION Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtRevoSecretary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <!--- Deputy secretary -->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Deputy secretary"
+                android:textColor="@color/white"
+                android:layout_marginTop="22dp"
+                android:textAlignment="center"
+                android:background="@color/purple_700"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sasco Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txtSascoDeputySecretary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EffSC Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtEffDeputySecretary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVOLUTION Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtRevoDeputySecretary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <!--- Academic Officer -->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Academic Officer"
+                android:textColor="@color/white"
+                android:layout_marginTop="22dp"
+                android:textAlignment="center"
+                android:background="@color/purple_700"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sasco Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txtSascoAO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EffSC Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtEffAO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVOLUTION Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtRevoAO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <!--- Logical Officer -->
+            <TextView
+                android:id="@+id/txtPortfolio"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Legal Officer"
+                android:textColor="@color/white"
+                android:layout_marginTop="22dp"
+                android:textAlignment="center"
+                android:background="@color/purple_700"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sasco Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txtSascoLO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EffSC Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtEffLO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVOLUTION Candidate"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/txtRevoLO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded8dp"
+                android:backgroundTint="#ddd"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:text="Update Candidate"
+                android:backgroundTint="@color/teal_700"
+                app:cornerRadius="25dp"
+                android:onClick="btnUpdateClick"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,4 +32,8 @@ public class Candidate
      public String getPortfolio() {
          return portfolio;
      }
+
+     public void setName(String name) {
+         this.name = name;
+     }
  }

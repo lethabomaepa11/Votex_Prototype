@@ -261,6 +261,47 @@ public final class VotexDB {
 
 
     }
+    static void Update(Context context, User user,Candidate candidate,Vote vote)
+    {
+        //Pass an object on one of the 3 and pass null on the remaining 2
+        VotexDbHelper dbHelper = new VotexDbHelper(context);
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        if(user != null)
+        {
+            values.put(Users.COLUMN_NAME_ID, user.id);
+            values.put(Users.COLUMN_NAME_NAME, user.name);
+            values.put(Users.COLUMN_NAME_EMAIL, user.email);
+            values.put(Users.COLUMN_NAME_PASSWORD, user.password);
+            values.put(Users.COLUMN_NAME_GENDER, user.gender);
+            db.update(Users.TABLE_NAME, values,"id=?",new String[]{user.id});
+
+        }
+        else if(candidate != null)
+        {
+            values.put(Candidates.COLUMN_NAME_ID, candidate.getId());
+            values.put(Candidates.COLUMN_NAME_NAME, candidate.getName());
+            values.put(Candidates.COLUMN_NAME_PORTFOLIO, candidate.getPortfolio());
+            values.put(Candidates.COLUMN_NAME_PARTY, candidate.getParty());
+            db.update(Candidates.TABLE_NAME, values,"ID=?",new String[]{candidate.getId()});
+        }
+        else if(vote != null)
+        {
+            values.put(Votes.COLUMN_NAME_ID, vote.getVoteId());
+            values.put(Votes.COLUMN_NAME_VOTER_ID, vote.getVoterId());
+            values.put(Votes.COLUMN_NAME_CANDIDATE_ID, vote.getCandidateId());
+            db.update(Users.TABLE_NAME, values,"id=?",new String[]{vote.getVoteId()});
+        }
+        //column names are the keys
+
+
+
+        //Insert the new row, returning the primary key value of the new row
+
+    }
 
 }
 
