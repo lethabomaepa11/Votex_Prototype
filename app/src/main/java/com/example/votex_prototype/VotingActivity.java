@@ -132,7 +132,7 @@ public class VotingActivity extends AppCompatActivity {
         layer3.setBackground(getDrawable(R.drawable.rounded8dp));
         clicked = 0;
 
-        if(btnSkipNext.getText().toString().equalsIgnoreCase("next"))
+        if(selectedNow != null)
         {
             sessionVotes.add(selectedNow);
         }
@@ -186,7 +186,7 @@ public class VotingActivity extends AppCompatActivity {
                 VotexDB.Insert(this,null,null,sessionVotes.get(i));
             }
 
-            if(sessionVotes.size()> 0)
+            if(sessionVotes.size() > 0)
             {
                 new AlertDialog.Builder(this)
                         .setTitle("Congratulations")
