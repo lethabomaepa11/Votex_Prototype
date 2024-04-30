@@ -18,7 +18,7 @@ public class Candidate
      }
 
      public String getParty() {
-         return this.party;
+         return party;
      }
 
      public String getId() {

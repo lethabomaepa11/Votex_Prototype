@@ -58,6 +58,7 @@ public final class VotexDB {
             "CREATE TABLE " + Candidates.TABLE_NAME + " (" +
                     Candidates.COLUMN_NAME_ID + " TEXT PRIMARY KEY," +
                     Candidates.COLUMN_NAME_NAME + " TEXT," +
+                    Candidates.COLUMN_NAME_PARTY + " TEXT," +
                     Candidates.COLUMN_NAME_PORTFOLIO + " TEXT)";
     private static final String SQL_CREATE_VOTES =
             "CREATE TABLE " + Votes.TABLE_NAME + " (" +

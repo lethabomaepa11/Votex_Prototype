@@ -10,28 +10,35 @@
 
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnSubmitVote"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
         android:text="Submit"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_700"
+        android:visibility="gone"
+        android:onClick="showPortfolio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.954" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnSkipNext"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="showPortfolio"
         android:text="Skip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.954" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -39,7 +46,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="20dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,31 +55,42 @@
 
 
         <LinearLayout
-
+            android:onClick="one"
+            android:id="@+id/candidateOne"
             android:layout_width="130dp"
+            android:layout_marginLeft="2dp"
             android:layout_height="229dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded8dp"
+            android:backgroundTint="#FFFF00"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Party: "
-                android:textSize="15dp"
-                android:textStyle="bold" />
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/txtParty1"/>
 
 
             <ImageButton
                 android:id="@+id/Candidate1"
                 android:layout_width="111dp"
                 android:layout_height="110dp"
-                android:onClick="onClickCand_1"
+                android:contentDescription="First candidate in the portfolio"
+                android:onClick="one"
+                android:src="@drawable/logo"
+                android:background="@drawable/rounded_corners_ui"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
+                android:id="@+id/txtCandidateName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="N. Ndumo"
+
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -80,62 +98,78 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:onClick="two"
+            android:id="@+id/candidateTwo"
+            android:layout_marginLeft="2dp"
             android:layout_width="130dp"
             android:layout_height="228dp"
-            android:background="@color/teal_200"
+            android:background="@drawable/rounded8dp"
+            android:backgroundTint="#ff0000"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:text="Party: "
+                android:textSize="17dp"
                 android:textStyle="bold"
-                android:text="Party: " />
+                android:textColor="@color/white"
+                android:id="@+id/txtParty2"/>
 
             <ImageButton
                 android:id="@+id/Candidate2"
                 android:layout_width="114dp"
                 android:layout_height="108dp"
-                android:onClick="onClickCand_2"
+                android:onClick="two"
+                android:background="@drawable/rounded_corners_ui"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
+                android:id="@+id/txtCandidateName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="N.Gatsheni"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="130dp"
             android:layout_height="228dp"
-            android:background="@color/purple_700"
-            android:orientation="vertical">
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/rounded8dp"
+            android:backgroundTint="#000"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/candidateThree"
+            android:onClick="three">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:text="Party: "
+                android:textColor="@android:color/white"
+                android:textSize="17dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/holo_orange_light"
-                android:text="Party: " />
+                android:id="@+id/txtParty3"/>
 
             <ImageButton
                 android:id="@+id/Candidate3"
                 android:layout_width="wrap_content"
                 android:layout_height="112dp"
-                android:onClick="onClickCand_3"
+                android:onClick="three"
+                android:background="@drawable/rounded_corners_ui"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
+                android:id="@+id/txtCandidateName3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="J.Mabuso"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="20dp" />
 
         </LinearLayout>
 

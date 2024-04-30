@@ -50,7 +50,7 @@ public class Index extends AppCompatActivity {
         VotexDB.readFromDB(this,"votes");
         VotexDB.readFromDB(this,"candidates");
         
-        while(users.isEmpty())
+        while(candidates.isEmpty() || users.isEmpty() || votes.isEmpty())
         {
             Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show();
         }

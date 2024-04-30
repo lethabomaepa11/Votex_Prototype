@@ -168,7 +168,7 @@ public class Home extends AppCompatActivity {
                     startActivity(new Intent(Home.this, VotingActivity.class));
                     dialog.dismiss();
                 })
-                .setIcon(android.R.drawable.ic_dialog_info)
+                .setIcon(android.R.drawable.ic_menu_info_details)
                 .show();
 
 
