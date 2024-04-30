@@ -1,18 +1,18 @@
 John Mpama#Chairperson#1JMpama#SASCO
 Mamba Juba#Chairperson#2MJuba#EFFSC
 Sandile Banda#Chairperson#3SBanda#REVOLUTION
-Donald Gatin#Deputy Chairperson#4DGatin#SASCO
-Maubane Jubane#Deputy Chairperson#5MJubane#EFFSC
-Andile Bandile#Deputy Chairperson#6ABandile#REVOLUTION
-John Kumba#Secretary#4JKumba#SASCO
-Sabelo Makhubela#Secretary#5SMakhubela#EFFSC
-Ntokozo Bamba#Secretary#6NBamba#REVOLUTION
-Karabo Khoza#Deputy Secretary#4KKhoza#SASCO
-Senzo Juba#Deputy Secretary#5SJuba#EFFSC
-Thomas Mlambo Jr#Deputy Secretary#6TMlambo#REVOLUTION
-Kennedy Mayo#Academic Officer#4KMayo#SASCO
-Kitso Mosimane#Academic Officer#5KMosimane#EFFSC
-Kwanele Mazibuko#Academic Officer#6KMazibuko#REVOLUTION
-Dineo Mokate#Legal Officer#4DMokate#SASCO
-Tshepo Phoku#Legal Officer#5TPhoku#EFFSC
-Tebogo Mooki#Legal Officer#6TMooki#REVOLUTION
+Donald Gatin#Deputy Chairperson#1DGatin#SASCO
+Maubane Jubane#Deputy Chairperson#2MJubane#EFFSC
+Andile Bandile#Deputy Chairperson#3ABandile#REVOLUTION
+John Kumba#Secretary#1JKumba#SASCO
+Sabelo Makhubela#Secretary#2SMakhubela#EFFSC
+Ntokozo Bamba#Secretary#3NBamba#REVOLUTION
+Karabo Khoza#Deputy Secretary#1KKhoza#SASCO
+Senzo Juba#Deputy Secretary#2SJuba#EFFSC
+Thomas Mlambo Jr#Deputy Secretary#3TMlambo#REVOLUTION
+Kennedy Mayo#Academic Officer#1KMayo#SASCO
+Kitso Mosimane#Academic Officer#2KMosimane#EFFSC
+Kwanele Mazibuko#Academic Officer#3KMazibuko#REVOLUTION
+Dineo Mokate#Legal Officer#1DMokate#SASCO
+Tshepo Phoku#Legal Officer#2TPhoku#EFFSC
+Tebogo Mooki#Legal Officer#3TMooki#REVOLUTION

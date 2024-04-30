@@ -146,6 +146,7 @@ public class VotingActivity extends AppCompatActivity {
             }
 
             List<Candidate> matchedCandidates = new ArrayList<>();
+            matchedCandidates.clear();
             for (Candidate candidate : candidates) {
                 if (candidate.getPortfolio().equals(portfolios.get(screen))) {
                     matchedCandidates.add(candidate);
@@ -247,6 +248,7 @@ public class VotingActivity extends AppCompatActivity {
             btnSkipNext.setText("Next");
             selectedNow = new Vote(sessionUser.id, matchedCandidates.get(candidate-1).getId());
             Toast.makeText(this, "Voting for "+selectedNow.getCandidateId(), Toast.LENGTH_SHORT).show();
+            //a bug for above, the getCandidate id returns id for only the first portfolio's candidates' id
         }
 
     }
