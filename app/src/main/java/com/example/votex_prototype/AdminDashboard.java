@@ -3,8 +3,12 @@ package com.example.votex_prototype;
 import static com.example.votex_prototype.Main.*;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,18 +50,25 @@ public class AdminDashboard extends AppCompatActivity {
             VotexDB.readFromDB(this, "votes");
             VotexDB.readFromDB(this, "candidates");
 
-            for(int i = 0; i < votes.size(); i++)
+            for(int k = 0; k < users.size(); k++)
             {
-                for(int k = 0; k < users.size(); k++)
+
+                for(int i = 0; i < votes.size(); i++)
                 {
                     if(Objects.equals(users.get(k).id, votes.get(i).getVoterId()))
                     {
                         users.get(k).setHasVoted();
                     }
+                    if(users.get(k).getHasVoted())
+                    {
+                        break;
+                    }
                 }
             }
+
             //load the stats
             callStats();
+            results();
         }
     }
     int hasVoted = 0;//admin not included
@@ -80,6 +91,42 @@ public class AdminDashboard extends AppCompatActivity {
         }
         lblVoted.setText(String.valueOf(hasVoted));
         lblDidNotVote.setText(String.valueOf(didNotVote));
+    }
+
+    public void results()
+    {
+        String[] portfolios = {"Chairperson","Deputy Chairperson","Secretary","Deputy Secretary","Academic Officer","Legal Officer"};
+        //display all 6 portfolios, 18 candidates and their vote count, sort descending
+
+        for(int p = 0; p < 6; p++)//portfolios
+        {
+            String portfolio = portfolios[p];
+            TextView list = findViewById(R.id.txtList);
+            /*ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+            ListView listView = (ListView) findViewById(R.id.listview);
+            listView.setAdapter(itemsAdapter);*/
+            list.setText(list.getText()+"\n\n"+portfolio.toUpperCase()+"...\n");
+            for(int i = 0; i < candidates.size(); i++)
+            {
+
+                int voteCount = 0;
+                if(candidates.get(i).getPortfolio().equalsIgnoreCase(portfolio))
+                {
+
+                    //iterate in votes
+                    for(int v = 0; v < votes.size(); v++)
+                    {
+                        if(votes.get(v).getCandidateId().equals(candidates.get(i).getId()))
+                        {
+                            voteCount++;
+                        }
+                    }
+                    //this will display the candidates grouped by portfolio
+                    list.setText(list.getText()+""+(i+1)+"\t"+candidates.get(i).getName()+"\t\t"+voteCount+"\n");
+                }
+
+            }
+        }
     }
 
 }

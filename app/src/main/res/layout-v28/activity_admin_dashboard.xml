@@ -41,6 +41,7 @@
         app:layout_constraintVertical_bias="0.932" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/rounded_corners_ui"
@@ -54,68 +55,76 @@
         <LinearLayout
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10dp"
             android:background="@drawable/rounded_corners_ui"
             android:backgroundTint="#eee"
-            >
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <TextView
-                android:textColor="#1f1f1f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total Number of Users"/>
+                android:text="Total Number of Users"
+                android:textColor="#1f1f1f" />
+
             <TextView
                 android:id="@+id/lblTotalUsers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
                 android:textColor="@color/black"
-                android:textFontWeight="800"/>
+                android:textFontWeight="800"
+                android:textSize="30dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
                 android:orientation="horizontal"
+                android:paddingTop="5dp"
                 android:text="Voted">
+
                 <TextView
-                    android:textColor="#1f1f1f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Voted"/>
+                    android:text="Voted"
+                    android:textColor="#1f1f1f" />
+
                 <TextView
-                    android:textColor="#1f1f1f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Did not Vote"/>
+                    android:text="Did not Vote"
+                    android:textColor="#1f1f1f" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
                 android:orientation="horizontal"
+                android:paddingBottom="10dp"
                 android:text="Voted">
+
                 <TextView
                     android:id="@+id/lblVoted"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="30dp"
                     android:textColor="@color/black"
-                    android:textFontWeight="800"/>
+                    android:textFontWeight="800"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:id="@+id/lblDidNotVote"
-                    android:layout_marginLeft="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="30dp"
+                    android:layout_marginLeft="25dp"
                     android:textColor="@color/black"
-                    android:textFontWeight="800"/>
+                    android:textFontWeight="800"
+                    android:textSize="30dp" />
 
             </LinearLayout>
-            
+
         </LinearLayout>
     </LinearLayout>
+
 
 
 
@@ -125,4 +134,52 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/rounded_corners_ui"
+        android:backgroundTint="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.05">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Current Votes"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/txtList"
+                    android:text=""
+                    android:textColor="@color/black"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
