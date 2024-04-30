@@ -91,7 +91,7 @@ public class VotingActivity extends AppCompatActivity {
                 portfolios.add(portfolio);
             }
         }
-        txtPortfolio.setText(portfolios.toString());
+
     }
 
     List<Candidate> matchedCandidates = new ArrayList<>();
@@ -145,7 +145,6 @@ public class VotingActivity extends AppCompatActivity {
                 return;
             }
 
-            List<Candidate> matchedCandidates = new ArrayList<>();
             matchedCandidates.clear();
             for (Candidate candidate : candidates) {
                 if (candidate.getPortfolio().equals(portfolios.get(screen))) {
