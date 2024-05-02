@@ -294,6 +294,7 @@ public final class VotexDB {
             values.put(Votes.COLUMN_NAME_VOTER_ID, vote.getVoterId());
             values.put(Votes.COLUMN_NAME_CANDIDATE_ID, vote.getCandidateId());
             db.update(Users.TABLE_NAME, values,"id=?",new String[]{vote.getVoteId()});
+
         }
         //column names are the keys
 

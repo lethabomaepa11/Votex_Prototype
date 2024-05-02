@@ -37,6 +37,7 @@ public class AdminDashboard extends AppCompatActivity {
         });
         Objects.requireNonNull(getSupportActionBar()).hide();//hide the titlebar
 
+
         if(users.isEmpty())
         {
             Toast.makeText(this, "Cannot open...", Toast.LENGTH_SHORT).show();
