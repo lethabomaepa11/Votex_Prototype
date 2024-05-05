@@ -174,4 +174,9 @@ public class Home extends AppCompatActivity {
 
 
     }
+    public void viewResults(View v)
+    {
+        startActivity(new Intent(Home.this, Results.class));
+
+    }
 }

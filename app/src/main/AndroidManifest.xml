@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Votex_Prototype"
         tools:targetApi="31">
         <activity
+            android:name=".Results"
+            android:exported="false" />
+        <activity
             android:name=".UpdateCandidates"
             android:exported="false" />
         <activity
