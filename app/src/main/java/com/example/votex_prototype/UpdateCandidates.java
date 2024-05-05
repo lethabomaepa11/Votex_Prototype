@@ -236,8 +236,9 @@ public class UpdateCandidates extends AppCompatActivity {
                     }
                     break;
             }
-            Toast.makeText(this, "Updating...", Toast.LENGTH_SHORT).show();
+
         }
+        Toast.makeText(this, "Updating...", Toast.LENGTH_SHORT).show();
         for(int i = 0; i < candidates.size();i++)
         {
             VotexDB.Update(this,null,candidates.get(i),null);
