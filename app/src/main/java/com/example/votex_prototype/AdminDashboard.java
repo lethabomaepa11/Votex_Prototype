@@ -76,28 +76,7 @@ public class AdminDashboard extends AppCompatActivity {
 
         }
     }
-    public ArrayList<String> generateResults() {
-        ArrayList<String> resultsList = new ArrayList<>();
-        String[] portfolios = {"Chairperson", "Deputy Chairperson", "Secretary", "Deputy Secretary", "Academic Officer", "Legal Officer"};
 
-        for (String portfolio : portfolios) {
-            StringBuilder result = new StringBuilder();
-            result.append(portfolio.toUpperCase()).append("...\n");
-            for (int i = 0; i < candidates.size(); i++) {
-                int voteCount = 0;
-                if (candidates.get(i).getPortfolio().equalsIgnoreCase(portfolio)) {
-                    for (Vote vote : votes) {
-                        if (vote.getCandidateId().equals(candidates.get(i).getId())) {
-                            voteCount++;
-                        }
-                    }
-                    result.append((i + 1)).append("\t").append(candidates.get(i).getName()).append("\t\t").append(voteCount).append("\n");
-                }
-            }
-            resultsList.add(result.toString());
-        }
-        return resultsList;
-    }
 
     int hasVoted = 0;//admin not included
     int didNotVote = -1;
